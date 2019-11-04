@@ -1,0 +1,5 @@
+<%= @task.title %>
+<%= image_tag @task.photo %>
+<% @todos.each do |todo|%>
+<p><%= todo.user.email %></p>
+<% end %>

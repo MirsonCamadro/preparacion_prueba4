@@ -1,0 +1,14 @@
+SOY EL TODOS
+
+<% @todos.each do |todo| %>
+    <%= link_to todo.task.title, todo_path(todo) %>
+    <% if todo.completed == true %>
+    <%= image_tag todo.task.photo%>
+    <%= link_to "No completado", update_todo_path(todo), method: :patch, class:"btn btn-danger" %>
+    <% else %>
+    <%= image_tag todo.task.photo, style: "-webkit-filter: grayscale(100%)"%>
+    <%= link_to "Listo", update_todo_path(todo), method: :patch, class:"btn btn-primary" %>
+    <% end %>
+    
+    
+<% end %>
